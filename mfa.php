@@ -12,6 +12,7 @@ $stmt = $conn->prepare('SELECT * FROM users WHERE id=?');
 $stmt->bind_param('i', $user_id);
 $stmt->execute();
 $user = $stmt->get_result()->fetch_assoc();
+$mfa_demo_code = $user['mfa_code']; // For demo display
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $code = sanitize($_POST['code']);
     if ($user['mfa_code'] === $code && strtotime($user['mfa_expires']) > time()) {
@@ -46,6 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body onload="startMFATimer(120, 'mfa-timer')">
     <div class="neon-title">Multi-Factor Authentication</div>
     <div class="neon-box">
+        <!-- Demo MFA code display -->
+        <div style="background:#10101a; color:#00fff7; border:2px dashed #00fff7; border-radius:8px; padding:10px; margin-bottom:15px; text-align:center; font-size:1.2em;">
+            <b>Demo MFA Code:</b> <?= htmlspecialchars($mfa_demo_code) ?>
+        </div>
         <form method="post">
             <div class="neon-label">Enter the 6-digit code sent to your email</div>
             <input class="input-neon" type="text" name="code" maxlength="6" required>
