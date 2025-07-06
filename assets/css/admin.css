@@ -1,0 +1,54 @@
+/* Neon Admin Dashboard Theme */
+body {
+    background: #0a0a14;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+.admin-title {
+    color: #ff00ea;
+    text-shadow: 0 0 12px #ff00ea, 0 0 24px #ff00ea;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+}
+.admin-stats-box {
+    background: #181828;
+    border: 2px solid #00ff7f;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ff7f;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+    color: #fff;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background: #10101a;
+    box-shadow: 0 0 10px #00fff7;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #00fff7;
+    padding: 12px 8px;
+    text-align: left;
+}
+.admin-table th {
+    background: #00ff7f;
+    color: #10101a;
+    font-weight: bold;
+}
+.admin-table tr:nth-child(even) {
+    background: #181828;
+}
+.admin-table tr:hover {
+    background: #22223a;
+}
+.admin-clock {
+    color: #ff00ea;
+    font-size: 1.2rem;
+    text-align: right;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px #ff00ea;
+} 
