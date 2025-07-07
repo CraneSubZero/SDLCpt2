@@ -17,5 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     // Add/Edit/Delete/Complete task handlers would go here (AJAX to PHP)
-    // ...
+    document.querySelectorAll('.neon-task-item form').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const action = this.querySelector('button[name="action"]').value;
+            const taskItem = this.closest('.neon-task-item');
+            const taskTitle = taskItem.querySelector('.task-title');
+            if (action === 'complete') {
+                // Add strikethrough immediately
+                taskTitle.classList.add('task-completed');
+            } else if (action === 'undo') {
+                // Remove strikethrough
+                taskTitle.classList.remove('task-completed');
+            }
+            // Allow form to submit normally for backend update
+        });
+    });
 }); 
