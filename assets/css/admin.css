@@ -4,51 +4,52 @@ body {
     color: #fff;
     font-family: 'Segoe UI', Arial, sans-serif;
 }
-.admin-title {
-    color: #ff00ea;
-    text-shadow: 0 0 12px #ff00ea, 0 0 24px #ff00ea;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 30px;
-}
-.admin-stats-box {
-    background: #181828;
-    border: 2px solid #00ff7f;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #00ff7f;
-    padding: 30px;
-    margin: 20px auto;
-    max-width: 600px;
-    color: #fff;
-}
+
 .admin-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 30px;
+    margin-top: 20px;
     background: #10101a;
-    box-shadow: 0 0 10px #00fff7;
+    box-shadow: 0 0 15px #00fff7;
+    border-radius: 8px;
+    overflow: hidden;
 }
+
 .admin-table th, .admin-table td {
     border: 1px solid #00fff7;
     padding: 12px 8px;
     text-align: left;
+    font-size: 0.9rem;
 }
+
 .admin-table th {
-    background: #00ff7f;
+    background: linear-gradient(90deg, #00ff7f, #00fff7);
     color: #10101a;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
 .admin-table tr:nth-child(even) {
     background: #181828;
 }
+
+.admin-table tr:nth-child(odd) {
+    background: #10101a;
+}
+
 .admin-table tr:hover {
     background: #22223a;
+    box-shadow: 0 0 10px #00fff7;
 }
-.admin-clock {
-    color: #ff00ea;
-    font-size: 1.2rem;
-    text-align: right;
-    margin-bottom: 10px;
-    text-shadow: 0 0 8px #ff00ea;
+
+/* Responsive table */
+@media (max-width: 768px) {
+    .admin-table {
+        font-size: 0.8rem;
+    }
+    
+    .admin-table th, .admin-table td {
+        padding: 8px 4px;
+    }
 } 
